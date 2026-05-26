@@ -1,9 +1,10 @@
-name: Demo Pipeline
- 
-on: push
- 
+name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
 jobs:
-  test:
+  welcome:
+    name: Post welcome comment
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello World!"
